@@ -13,7 +13,6 @@ services:
     environment:
       AMAZEEIO: true
       AMAZEEIO_URL: staticsite.docker.amazee.io
-      AMAZEEIO_SITE_NAME: static-site
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html
       - ./script.js:/usr/share/nginx/html/script.js

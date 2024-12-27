@@ -7,5 +7,3 @@ environments:
     routes:
       - nginx:
           - url: "http://staticsite.docker.amazee.io"
-            tls-acme: false
-            insecure: Allow
