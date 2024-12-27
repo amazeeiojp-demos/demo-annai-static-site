@@ -1,0 +1,11 @@
+docker-compose-yaml: docker-compose.yml
+
+project: static-site
+
+environments:
+  main:
+    routes:
+      - nginx:
+          - url: "http://staticsite.docker.amazee.io"
+            tls-acme: false
+            insecure: Allow

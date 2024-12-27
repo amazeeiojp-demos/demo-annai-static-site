@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: my-nginx
+    labels:
+      lagoon.type: nginx
+      lagoon.name: nginx
+      lagoon.project: static-site
+      amazeeio: true
+      amazeeio.type: nginx
+    environment:
+      AMAZEEIO: true
+      AMAZEEIO_URL: staticsite.docker.amazee.io
+      AMAZEEIO_SITE_NAME: static-site
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+      - ./script.js:/usr/share/nginx/html/script.js
+      - ./style.css:/usr/share/nginx/html/style.css
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - amazeeio-network
+
+networks:
+  amazeeio-network:
+    external: true
