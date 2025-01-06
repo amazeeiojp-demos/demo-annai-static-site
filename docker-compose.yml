@@ -2,7 +2,7 @@ version: '3'
 
 x-environment:
   &default-environment
-    LAGOON_ROUTE: &default-url http://${COMPOSE_PROJECT_NAME:-static-site}.docker.amazee.io
+    LAGOON_ROUTE: &default-url http://staticsite.docker.amazee.io
 
 x-user:
   &default-user
