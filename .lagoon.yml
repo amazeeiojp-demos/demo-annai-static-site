@@ -6,9 +6,6 @@ environments:
   main:
     routes:
       - nginx:
-        - "nginx.main.demo-annai-static-site.jp1.amazee.io":
-            tls-acme: true
-            insecure: Redirect
-        - "staticsite.docker.amazee.io":
+          - url: "nginx.main.demo-annai-static-site.jp1.amazee.io"
             tls-acme: true
             insecure: Redirect
