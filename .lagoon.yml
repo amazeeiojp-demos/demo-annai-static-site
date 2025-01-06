@@ -1,11 +1,11 @@
 docker-compose-yaml: docker-compose.yml
 
-project: ${LAGOON_PROJECT}
+project: static-site
 
 environments:
   main:
     routes:
       - nginx:
-        - "${LAGOON_ROUTE}":
+        - "nginx.${LAGOON_PROJECT}.jp1.amazee.io":
             tls-acme: true
             insecure: Redirect
