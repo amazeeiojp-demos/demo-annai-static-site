@@ -1,9 +1,10 @@
 version: '3'
 
 services:
-  web:
-    image: nginx:alpine
-    container_name: my-nginx
+  nginx:
+    build:
+      context: .
+      dockerfile: lagoon/nginx.dockerfile
     labels:
       lagoon.type: nginx
       lagoon.name: nginx
@@ -14,12 +15,10 @@ services:
       AMAZEEIO: true
       AMAZEEIO_URL: staticsite.docker.amazee.io
     volumes:
-      - ./index.html:/usr/share/nginx/html/index.html
-      - ./script.js:/usr/share/nginx/html/script.js
-      - ./style.css:/usr/share/nginx/html/style.css
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
       - amazeeio-network
+      - default
 
 networks:
   amazeeio-network:
