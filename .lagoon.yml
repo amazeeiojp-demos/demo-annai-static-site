@@ -2,17 +2,13 @@ docker-compose-yaml: docker-compose.yml
 
 project: static-site
 
-tasks:
-  post-rollout:
-    - run:
-        name: Testing the environment
-        command: wget -q -O - localhost:8080 -S
-        service: nginx
-
 environments:
   main:
     routes:
       - nginx:
+        - "nginx.main.demo-annai-static-site.jp1.amazee.io":
+            tls-acme: true
+            insecure: Redirect
         - "staticsite.docker.amazee.io":
             tls-acme: true
             insecure: Redirect
