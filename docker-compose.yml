@@ -26,8 +26,6 @@ services:
       AMAZEEIO: true
       AMAZEEIO_URL: nginx.main.demo-annai-static-site.jp1.amazee.io
       LAGOON_LOCALDEV_URL: *default-url
-      BASIC_AUTH_USERNAME: ${BASIC_AUTH_USERNAME}
-      BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD}
     volumes:
       - ./src:/app/src
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
