@@ -13,5 +13,6 @@ environments:
   main:
     routes:
       - nginx:
-        - url: "${LAGOON_ROUTE}"
-          tls-acme: true
+        - "${LAGOON_ROUTE}":
+            tls-acme: true
+            insecure: Redirect
