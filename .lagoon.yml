@@ -6,6 +6,6 @@ environments:
   main:
     routes:
       - nginx:
-          - url: "nginx.main.demo-annai-static-site.jp1.amazee.io"
+          - domain: "nginx.main.demo-annai-static-site.jp1.amazee.io"
             tls-acme: true
             insecure: Redirect
