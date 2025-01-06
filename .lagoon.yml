@@ -6,6 +6,6 @@ environments:
   main:
     routes:
       - nginx:
-        - "nginx.${LAGOON_PROJECT}.jp1.amazee.io":
+        - "nginx.main.demo-annai-static-site.jp1.amazee.io":
             tls-acme: true
             insecure: Redirect

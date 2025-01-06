@@ -2,7 +2,7 @@ version: '3'
 
 x-environment:
   &default-environment
-    LAGOON_ROUTE: &default-url http://${LAGOON_PROJECT}.docker.amazee.io
+    LAGOON_ROUTE: &default-url http://demo-annai-static-site.docker.amazee.io
 
 x-user:
   &default-user
@@ -24,7 +24,7 @@ services:
     environment:
       << : *default-environment
       AMAZEEIO: true
-      AMAZEEIO_URL: ${LAGOON_ROUTE_HOSTNAME}
+      AMAZEEIO_URL: nginx.main.demo-annai-static-site.jp1.amazee.io
       LAGOON_LOCALDEV_URL: *default-url
       BASIC_AUTH_USERNAME: ${BASIC_AUTH_USERNAME}
       BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD}
