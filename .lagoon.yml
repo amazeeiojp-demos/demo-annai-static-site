@@ -2,8 +2,16 @@ docker-compose-yaml: docker-compose.yml
 
 project: static-site
 
+tasks:
+  post-rollout:
+    - run:
+        name: Testing the environment
+        command: curl localhost:8080 -I
+        service: nginx
+
 environments:
   main:
     routes:
       - nginx:
-          - url: "http://staticsite.docker.amazee.io"
+          - url: "${LAGOON_ROUTE}"
+            tls-acme: true
