@@ -13,5 +13,5 @@ environments:
   main:
     routes:
       - nginx:
-          - url: "${LAGOON_ROUTE}"
-            tls-acme: true
+          url: "${LAGOON_ROUTE}"
+          tls-acme: true
