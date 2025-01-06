@@ -6,7 +6,7 @@ tasks:
   post-rollout:
     - run:
         name: Testing the environment
-        command: curl localhost:8080 -I
+        command: wget -q -O - localhost:8080 -S
         service: nginx
 
 environments:
