@@ -1,4 +1,8 @@
-version: '3'
+x-volumes:
+  &default-volumes
+    volumes:
+      - ./src:/app/src:delegated
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:delegated
 
 x-environment:
   &default-environment
@@ -17,19 +21,12 @@ services:
       lagoon.type: nginx
       lagoon.name: nginx
       lagoon.project: static-site
-      amazeeio: true
-      amazeeio.type: nginx
-    << : *default-user
+    << : [*default-volumes, *default-user]
     ports:
       - "8080"
     environment:
       << : *default-environment
-      AMAZEEIO: true
-      AMAZEEIO_URL: nginx.main.demo-annai-static-site.jp1.amazee.io
       LAGOON_LOCALDEV_URL: *default-url
-    volumes:
-      - ./src:/app/src:rw
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
       - amazeeio-network
       - default

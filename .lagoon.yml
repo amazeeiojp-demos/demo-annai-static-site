@@ -1,11 +1,3 @@
 docker-compose-yaml: docker-compose.yml
 
 project: static-site
-
-environments:
-  main:
-    routes:
-      - nginx:
-        - "nginx.main.demo-annai-static-site.jp1.amazee.io":
-            tls-acme: true
-            insecure: Allow
