@@ -8,4 +8,4 @@ environments:
       - nginx:
         - "nginx.main.demo-annai-static-site.jp1.amazee.io":
             tls-acme: true
-            insecure: Redirect
+            insecure: Allow
