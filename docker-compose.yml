@@ -20,15 +20,12 @@ services:
     labels:
       lagoon.type: nginx
       lagoon.project: static-site
-      amazeeio: true
-      amazeeio.type: nginx
+      lagoon.basic_auth: true
     << : [*default-volumes, *default-user]
     ports:
       - "8080"
     environment:
       << : *default-environment
-      AMAZEEIO: true
-      AMAZEEIO_URL: nginx.${LAGOON_ENVIRONMENT}.demo-annai-static-site.jp1.amazee.io
       LAGOON_LOCALDEV_URL: *default-url
     networks:
       - amazeeio-network
