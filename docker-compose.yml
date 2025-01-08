@@ -18,16 +18,17 @@ services:
       context: .
       dockerfile: lagoon/nginx.dockerfile
     labels:
-      lagoon.type: nginx-persistent
+      lagoon.type: nginx
       lagoon.project: static-site
-      lagoon.basic_auth: true
-      lagoon.persistent: /app/src
-      lagoon.routes: http://nginx.${LAGOON_ENVIRONMENT}.demo-annai-static-site.jp1.amazee.io
+      amazeeio: true
+      amazeeio.type: nginx
     << : [*default-volumes, *default-user]
     ports:
       - "8080"
     environment:
       << : *default-environment
+      AMAZEEIO: true
+      AMAZEEIO_URL: nginx.${LAGOON_ENVIRONMENT}.demo-annai-static-site.jp1.amazee.io
       LAGOON_LOCALDEV_URL: *default-url
     networks:
       - amazeeio-network
