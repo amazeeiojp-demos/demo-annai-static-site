@@ -1,3 +1,11 @@
 docker-compose-yaml: docker-compose.yml
 
 project: static-site
+
+environments:
+  main:
+    routes:
+      - nginx:
+          - url: ${LAGOON_ROUTE}
+            tls-acme: true
+            insecure: Redirect
