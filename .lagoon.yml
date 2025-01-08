@@ -1,3 +1,12 @@
 docker-compose-yaml: docker-compose.yml
 
 project: static-site
+
+environments:
+  main:
+    routes:
+      - nginx:
+        - demo-static.amazeeio.jp:
+            tls-acme: true
+            insecure: Redirect
+            hstsEnabled: true
