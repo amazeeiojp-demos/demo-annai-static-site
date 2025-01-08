@@ -9,4 +9,7 @@ environments:
           - "nginx.${LAGOON_ENVIRONMENT}.demo-annai-static-site.jp1.amazee.io":
               tls-acme: true
               insecure: Redirect
-              basic_auth: true
+              basic_auth:
+                enabled: true
+                username: ${BASIC_AUTH_USERNAME}
+                password: ${BASIC_AUTH_PASSWORD}
