@@ -3,7 +3,7 @@ docker-compose-yaml: docker-compose.yml
 project: static-site
 
 environments:
-  main:
+  dev:
     routes:
       - nginx:
           - url: ${LAGOON_ROUTE}
