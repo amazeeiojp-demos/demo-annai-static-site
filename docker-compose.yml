@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: lagoon/nginx.dockerfile
     labels:
-      lagoon.type: nginx
+      lagoon.type: nginx-persistent
       lagoon.name: nginx
       lagoon.project: static-site
       lagoon.basic_auth: true

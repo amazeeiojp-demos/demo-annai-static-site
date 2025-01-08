@@ -11,5 +11,5 @@ environments:
               insecure: Redirect
               basic_auth:
                 enabled: true
-                username: ${BASIC_AUTH_USERNAME}
-                password: ${BASIC_AUTH_PASSWORD}
+                username: "${BASIC_AUTH_USERNAME}"
+                password: "${BASIC_AUTH_PASSWORD}"
