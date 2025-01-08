@@ -2,6 +2,7 @@ x-volumes:
   &default-volumes
     volumes:
       - ./src:/app/src:delegated
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:delegated
 
 x-environment:
   &default-environment
