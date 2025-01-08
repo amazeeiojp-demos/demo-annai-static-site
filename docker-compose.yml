@@ -22,6 +22,7 @@ services:
       lagoon.name: nginx
       lagoon.project: static-site
       lagoon.basic_auth: true
+      lagoon.persistent: /app/src
     << : [*default-volumes, *default-user]
     ports:
       - "8080"
