@@ -3,10 +3,10 @@ docker-compose-yaml: docker-compose.yml
 project: static-site
 
 environments:
-  dev:
+  '*':
     routes:
       - nginx:
-          - "${LAGOON_ROUTE}":
+          - "nginx.${LAGOON_ENVIRONMENT}.demo-annai-static-site.jp1.amazee.io":
               tls-acme: true
               insecure: Redirect
               basic_auth: true
