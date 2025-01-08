@@ -19,10 +19,10 @@ services:
       dockerfile: lagoon/nginx.dockerfile
     labels:
       lagoon.type: nginx-persistent
-      lagoon.name: nginx
       lagoon.project: static-site
       lagoon.basic_auth: true
       lagoon.persistent: /app/src
+      lagoon.routes: http://nginx.${LAGOON_ENVIRONMENT}.demo-annai-static-site.jp1.amazee.io
     << : [*default-volumes, *default-user]
     ports:
       - "8080"
