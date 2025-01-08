@@ -6,7 +6,7 @@ environments:
   main:
     routes:
       - nginx:
-        - demo-static.amazeeio.jp:
+        - "nginx.dev.demo-annai-static-site.jp1.amazee.io":
             tls-acme: true
             insecure: Redirect
             hstsEnabled: true
