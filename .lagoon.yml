@@ -6,6 +6,7 @@ environments:
   dev:
     routes:
       - nginx:
-          - url: ${LAGOON_ROUTE}
-            tls-acme: true
-            insecure: Redirect
+          - "${LAGOON_ROUTE}":
+              tls-acme: true
+              insecure: Redirect
+              basic_auth: true
